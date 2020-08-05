@@ -19,16 +19,16 @@ class BitstampRTP {
 		$output .= "	<div id='rtp_container'>";
 		$output .= "		<span id='rtp_price'>...</span> €";
 		$output .= "	</div>";
-	    $output .= "</span>";
+	  $output .= "</span>";
 
-	    return $output;
+	  return $output;
 	}
 
 	public static function euro_real_time_price(){
 		echo "<!-- start - euro_real_time_price by Sergio Casizzone -->";
 		echo "<script src='https://code.jquery.com/jquery-1.12.4.js'></script>";
 		echo "<script src='https://code.jquery.com/ui/1.12.1/jquery-ui.js'></script>";
-	    echo "<script type=\"text/javascript\">\n";
+	  echo "<script type=\"text/javascript\">\n";
 
 		echo "var ws = new WebSocket('wss://ws.bitstamp.net');"; // New websocket v. 2 for Bitstamp
 		echo "var subscription = {
@@ -38,9 +38,9 @@ class BitstampRTP {
 				}
 		};"; // Create object for channel subscription
 
-  		echo "ws.onopen = function () {
+  	echo "ws.onopen = function () {
 			ws.send(JSON.stringify(subscription));
-		};"; // send subsription
+		};"; // send subscription
 
 		echo "ws.onmessage = function (evt) {
 			response = JSON.parse(evt.data);
@@ -65,10 +65,10 @@ class BitstampRTP {
       				setTimeout(function() {
         				$( '#rtp_price' ).removeAttr( 'style' ).hide().fadeIn();
       				}, 1000 );
-    	};";
+    };";
 
 		echo "</script>\n";
-	    echo "<!-- end - euro_real_time_price by Sergio Casizzone -->\n";
+	  echo "<!-- end - euro_real_time_price by Sergio Casizzone -->\n";
 	}
 }
 ?>
